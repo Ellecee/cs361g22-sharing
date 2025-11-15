@@ -1,7 +1,7 @@
 {
   "name": "sharing-service",
   "version": "1.0.0",
-  "description": "Sharing Microservice for CS361 Milestone 2",
+  "description": "Sharing Microservice for CS361 Group 22 Small Pool",
   "main": "server.js",
   "type": "module",
   "scripts": {

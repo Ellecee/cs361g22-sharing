@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Test client for the sharing service
 async function run() {
   console.log("=== Creating share link ===");
 

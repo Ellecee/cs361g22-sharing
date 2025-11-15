@@ -48,7 +48,7 @@ app.get("/s/:shareId", (req, res) => {
     return res.status(410).json({ error: "Expired or revoked" });
   }
 
-  // Example fake shared object (you can customize this)
+  // Example fake shared object
   res.json({
     itemId: record.itemId,
     name: "Example Shared Item",
@@ -56,6 +56,7 @@ app.get("/s/:shareId", (req, res) => {
   });
 });
 
+// Start the server
 app.listen(5001, () => {
   console.log("Sharing Microservice running on http://localhost:5001");
 });
