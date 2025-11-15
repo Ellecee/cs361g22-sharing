@@ -1,4 +1,5 @@
 # Sharing Microservice  
+
 CS361 – Assignment 8 (Small Pool / Milestone #2)  
 Author: Group 22
 
@@ -19,19 +20,22 @@ The test program (`test_sharing_client.js`) demonstrates how a client program ca
 
 ---
 
-## How to Run the Microservice
+## How to run the microservice
 
-### 1. Install dependencies
+### Install dependencies
+
 ```
 npm install
 ```
 
-### 2. Start the microservice
+### Start the microservice
+
 ```
 npm start
 ```
 
 You should see:
+
 ```
 Sharing Microservice running on http://localhost:5001
 ```
@@ -40,19 +44,22 @@ Leave this running in **Terminal #1**.
 
 ---
 
-# 1️⃣ Creating a Share Link
+## 1. Creating a share link
 
 ### **Endpoint**
+
 ```
 POST http://localhost:5001/share
 ```
 
 ### **Headers**
+
 ```
 Content-Type: application/json
 ```
 
 ### **Request Body Example**
+
 ```json
 {
   "itemId": "abc123",
@@ -61,6 +68,7 @@ Content-Type: application/json
 ```
 
 ### **Example Output**
+
 ```json
 {
   "shareId": "sh_a1b2c3",
@@ -71,14 +79,16 @@ Content-Type: application/json
 
 ---
 
-# 2️⃣ Retrieving Shared Item
+## 2. Retrieving shared item
 
 ### **Endpoint**
+
 ```
 GET http://localhost:5001/s/{shareId}
 ```
 
 ### **Successful Response**
+
 ```json
 {
   "itemId": "abc123",
@@ -88,6 +98,7 @@ GET http://localhost:5001/s/{shareId}
 ```
 
 ### **Expired Response**
+
 ```
 Status: 410 Gone
 ```
@@ -100,7 +111,7 @@ Status: 410 Gone
 
 ---
 
-# 🧪 Test Program
+## Test program
 
 ### `test_sharing_client.js`
 
@@ -130,12 +141,13 @@ run();
 ```
 
 Run:
+
 ```
 node test_sharing_client.js
 ```
 
 ---
 
-# 📈 UML Sequence Diagram
+## UML sequence diagram
 
-*(To be added)*
+To be added
