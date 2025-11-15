@@ -149,5 +149,30 @@ node test_sharing_client.js
 ---
 
 ## UML sequence diagram
+```mermaid
+---
+config:
+  theme: mc
+---
+sequenceDiagram
+  participant Client
+  participant Sharing Microservice
+  participant Memory@{ "type" : "database"}
 
-To be added
+  Note right of Memory: Data Storage
+  Note left of Client: Creating a share link
+  Client ->> Sharing Microservice: Request to create a share link<br>POST /share { itemId, ttlHours }
+  opt invalid itemID
+    Sharing Microservice -->> Client: Error "itemId is required"
+  end
+  Sharing Microservice ->> Memory: Write information to Memory
+  Sharing Microservice -->> Client: JSON reponse <br/>{ shareId, shareUrl, expiresAt }
+  Note left of Client: Getting a share link <br/>When the user clicks the link
+  Client ->> Sharing Microservice: User clicks on share link
+  Sharing Microservice ->> Memory: send shareId
+  Sharing Microservice -->> Client: JSON response <br/>{ itemId, name, description }
+  alt link doesn't exist
+    Sharing Microservice -->> Client: Status 404 Not found
+  else link expired or removed
+    Sharing Microservice -->> Client: Status 410 Expired or revoked
+  end
