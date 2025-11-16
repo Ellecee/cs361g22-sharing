@@ -201,7 +201,7 @@ sequenceDiagram
   Sharing Microservice -->> Client: JSON reponse <br/>{ shareId, shareUrl, expiresAt }
   Note left of Client: Getting a share link <br/>When the user clicks the link
   Client ->> Sharing Microservice: User clicks on share link
-  Sharing Microservice ->> Memory: send shareId
+  Sharing Microservice ->> Memory: Get link by shareId
   Sharing Microservice -->> Client: JSON response <br/>{ itemId, name, description }
   alt link doesn't exist
     Sharing Microservice -->> Client: Status 404 Not found
