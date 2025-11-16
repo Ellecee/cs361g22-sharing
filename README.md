@@ -9,9 +9,11 @@ Author: Group 22
 
 The **Sharing Microservice** allows another program to create a **temporary share link** for an item and then retrieve that item using the generated URL.
 
+### Communication Contract
+
 This microservice runs independently on port **5001** and communicates using **HTTP JSON**.
 
-It supports:
+Endpoints:
 
 - `POST /share` – Create a share link for an item  
 - `GET /s/{shareId}` – Retrieve the shared item using the share link  
