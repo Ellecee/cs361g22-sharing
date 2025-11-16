@@ -69,6 +69,22 @@ Content-Type: application/json
 }
 ```
 
+Programatically **request** data and **receives** data through the following:
+
+Request:
+
+```
+const shareResponse = await axios.post("http://localhost:5001/share", {
+  itemId: "abc123",
+  ttlHours: 48
+});
+```
+Receive:
+```
+shareResponse.data
+```
+
+
 ### **Example Output**
 
 ```json
@@ -87,6 +103,20 @@ Content-Type: application/json
 
 ```
 GET http://localhost:5001/s/{shareId}
+```
+
+Programatically **request** data and **receives** data through the following:
+
+Request:
+
+```
+const itemResponse = await axios.get(shareResponse.data.shareUrl);
+```
+
+Receive:
+
+```
+itemResponse.data
 ```
 
 ### **Successful Response**
