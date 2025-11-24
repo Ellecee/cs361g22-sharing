@@ -56,7 +56,6 @@ app.get("/s/:shareId", (req, res) => {
   });
 });
 
-// Start the server
 app.listen(5001, () => {
   console.log("Sharing Microservice running on http://localhost:5001");
 });
